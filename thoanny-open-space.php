@@ -4,9 +4,11 @@
  * Plugin Name:       Open Space de Thoanny
  * Plugin URI:        https://anthony-destenay.fr
  * Description:       Fonctionnalités liées à Mix It Up, StreamElements et Discord
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Anthony Destenay
  * Author URI:        https://anthony-destenay.fr
+ * GitHub Plugin URI: https://github.com/thoanny/wp-plugin-open-space
+ * Primary Branch:    main
  */
 
 function thoanny_openspace_enqueue_script( $hook ) {
@@ -52,7 +54,7 @@ function thoanny_openspace_mime_types($mimes) {
 add_filter('upload_mimes', 'thoanny_openspace_mime_types');
 
 
-require plugin_dir_path(__FILE__) . '_shortcode_discord-events.php';
-require plugin_dir_path(__FILE__) . '_shortcode_mixitup-leaderboard.php';
-require plugin_dir_path(__FILE__) . '_shortcode_streamelements-activity.php';
-require plugin_dir_path(__FILE__) . '_shortcode_jeu-decouvre-vod.php';
+require plugin_dir_path(__FILE__) . 'includes/shortcodes/discord-events.php';
+require plugin_dir_path(__FILE__) . 'includes/shortcodes/mixitup-leaderboard.php';
+require plugin_dir_path(__FILE__) . 'includes/shortcodes/streamelements-activity.php';
+require plugin_dir_path(__FILE__) . 'includes/shortcodes/jeu-decouvre-vod.php';
