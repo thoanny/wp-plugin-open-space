@@ -1,0 +1,282 @@
+.streamelement-activities {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .fa-spin {
+    color: white;
+  }
+
+  > div {
+    display: inline-flex;
+    align-items: center;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+
+    span {
+      padding: .5rem .75rem;
+    }
+
+    &.subscriber-event, &.follow-event, &.tip-event, &.cheer-event, &.raid-event {
+      span:after {
+        text-transform: uppercase;
+        font-size: .65rem;
+        font-weight: bold;
+        opacity: .5;
+        margin-left: .5rem;
+      }
+    }
+
+    &.subscriber-event {
+      span:after {
+        content: 'Sub';
+      }
+    }
+
+    &.follow-event {
+      span:after {
+        content: 'Follow';
+      }
+    }
+
+    &.tip-event {
+      span:after {
+        content: 'Tip';
+      }
+    }
+
+    &.cheer-event {
+      span:after {
+        content: 'Bits';
+      }
+    }
+
+    &.raid-event {
+      span:after {
+        content: 'Raid';
+      }
+    }
+  }
+
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0!important;
+  }
+}
+
+body {
+  --color-miu-error: #e74c3c;
+  --miu-primary: #93C045;
+  --miu-lightgray: #ECF0F1;
+  --miu-black: #353740;
+  --color-miu-primary: var(--ee-global-color-primary, var(--miu-primary));
+  --color-miu-lightgray: var(--ee-global-color-d303ba0, var(--miu-lightgray));
+  --color-miu-black: var(--ee-global-color-text, var(--miu-black));
+}
+
+.mixitup {
+
+  &.error {
+    text-align: center;
+    background: var(--color-miu-error) !important;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 2rem;
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    &.elementor-button {
+      text-decoration: none;
+
+      i {
+        margin-right: .5rem;
+      }
+    }
+  }
+
+  .leaderboard {
+    max-width: 720px;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 0 auto 1rem;
+
+    > div {
+      position: relative;
+      width: calc(50% - .5rem);
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--color-miu-lightgray);
+      border-radius: 4px;
+      overflow: hidden;
+      padding: .5rem 1rem;
+
+      .user {
+        z-index: 30;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        font-weight: 500;
+
+        .top {
+          display: flex;
+          width: 2rem;
+          height: 2rem;
+          background: white;
+          border-radius: 50%;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          color: var(--color-miu-primary);
+        }
+
+        img {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 4px;
+        }
+
+        a {
+          color: var(--color-miu-black);
+        }
+      }
+
+      .time, .xp {
+        z-index: 30;
+        padding-right: .5rem;
+      }
+    }
+
+
+  }
+
+  .updated-at {
+    font-size: .9rem;
+    text-align: center;
+  }
+
+}
+
+.discord-events {
+  &.error {
+    text-align: center;
+    background: var(--color-miu-error) !important;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 2rem;
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .event {
+    background: var(--miu-lightgray);
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+    text-align: center;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .thumbnail {
+      margin: -1rem -1rem .5rem;
+
+      img {
+        border-radius: 0 !important;
+        height: 150px;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 1.15rem;
+    }
+
+    .dates {
+      font-size: .9rem;
+      opacity: .75;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+    }
+
+    .description {
+      font-size: .9rem;
+    }
+  }
+}
+
+.jeu-decouvre-vod {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .game {
+
+    a[href^="https://youtu.be"] {
+      display: block;
+      position: relative;
+      margin-bottom: .75rem;
+
+      .fa-stack {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+
+        .fa-circle {
+          text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+        }
+
+        .fa-play {
+          margin-left: .15rem;
+        }
+      }
+
+      img {
+        border-radius: 4px;
+        display: block;
+      }
+    }
+  }
+
+}

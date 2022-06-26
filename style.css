@@ -1,0 +1,230 @@
+.streamelement-activities {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.streamelement-activities .fa-spin {
+  color: white;
+}
+.streamelement-activities > div {
+  display: inline-flex;
+  align-items: center;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.streamelement-activities > div span {
+  padding: 0.5rem 0.75rem;
+}
+.streamelement-activities > div.subscriber-event span:after, .streamelement-activities > div.follow-event span:after, .streamelement-activities > div.tip-event span:after, .streamelement-activities > div.cheer-event span:after, .streamelement-activities > div.raid-event span:after {
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: bold;
+  opacity: 0.5;
+  margin-left: 0.5rem;
+}
+.streamelement-activities > div.subscriber-event span:after {
+  content: "Sub";
+}
+.streamelement-activities > div.follow-event span:after {
+  content: "Follow";
+}
+.streamelement-activities > div.tip-event span:after {
+  content: "Tip";
+}
+.streamelement-activities > div.cheer-event span:after {
+  content: "Bits";
+}
+.streamelement-activities > div.raid-event span:after {
+  content: "Raid";
+}
+.streamelement-activities img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0 !important;
+}
+
+body {
+  --color-miu-error: #e74c3c;
+  --miu-primary: #93C045;
+  --miu-lightgray: #ECF0F1;
+  --miu-black: #353740;
+  --color-miu-primary: var(--ee-global-color-primary, var(--miu-primary));
+  --color-miu-lightgray: var(--ee-global-color-d303ba0, var(--miu-lightgray));
+  --color-miu-black: var(--ee-global-color-text, var(--miu-black));
+}
+
+.mixitup.error {
+  text-align: center;
+  background: var(--color-miu-error) !important;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+}
+.mixitup.error p:last-of-type {
+  margin-bottom: 0;
+}
+.mixitup a.elementor-button {
+  text-decoration: none;
+}
+.mixitup a.elementor-button i {
+  margin-right: 0.5rem;
+}
+.mixitup .leaderboard {
+  max-width: 720px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 auto 1rem;
+}
+.mixitup .leaderboard > div {
+  position: relative;
+  width: calc(50% - .5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-miu-lightgray);
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+}
+@media screen and (max-width: 767px) {
+  .mixitup .leaderboard > div {
+    width: 100%;
+  }
+}
+.mixitup .leaderboard > div .user {
+  z-index: 30;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-weight: 500;
+}
+.mixitup .leaderboard > div .user .top {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  background: white;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--color-miu-primary);
+}
+.mixitup .leaderboard > div .user img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 4px;
+}
+.mixitup .leaderboard > div .user a {
+  color: var(--color-miu-black);
+}
+.mixitup .leaderboard > div .time, .mixitup .leaderboard > div .xp {
+  z-index: 30;
+  padding-right: 0.5rem;
+}
+.mixitup .updated-at {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.discord-events {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.discord-events.error {
+  text-align: center;
+  background: var(--color-miu-error) !important;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+}
+.discord-events.error p:last-of-type {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 1024px) {
+  .discord-events {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 767px) {
+  .discord-events {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+.discord-events .event {
+  background: var(--miu-lightgray);
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.discord-events .event .thumbnail {
+  margin: -1rem -1rem 0.5rem;
+}
+.discord-events .event .thumbnail img {
+  border-radius: 0 !important;
+  height: 150px;
+  object-fit: cover;
+  width: 100%;
+}
+.discord-events .event .title {
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+.discord-events .event .dates {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.discord-events .event .description {
+  font-size: 0.9rem;
+}
+
+.jeu-decouvre-vod {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media screen and (max-width: 1024px) {
+  .jeu-decouvre-vod {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 767px) {
+  .jeu-decouvre-vod {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+.jeu-decouvre-vod .game a[href^="https://youtu.be"] {
+  display: block;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+.jeu-decouvre-vod .game a[href^="https://youtu.be"] .fa-stack {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+}
+.jeu-decouvre-vod .game a[href^="https://youtu.be"] .fa-stack .fa-circle {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.jeu-decouvre-vod .game a[href^="https://youtu.be"] .fa-stack .fa-play {
+  margin-left: 0.15rem;
+}
+.jeu-decouvre-vod .game a[href^="https://youtu.be"] img {
+  border-radius: 4px;
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */
