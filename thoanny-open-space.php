@@ -4,21 +4,26 @@
  * Plugin Name:       Open Space de Thoanny
  * Plugin URI:        https://anthony-destenay.fr
  * Description:       Fonctionnalités liées à Mix It Up, StreamElements et Discord
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Anthony Destenay
  * Author URI:        https://anthony-destenay.fr
  * GitHub Plugin URI: https://github.com/thoanny/wp-plugin-open-space
  * Primary Branch:    main
  */
 
+
+
 function thoanny_openspace_enqueue_script( $hook ) {
+    $plugin_data = get_plugin_data( __FILE__ );
+    $plugin_version = $plugin_data['Version'];
+
     wp_enqueue_style('thoanny-open-space', plugins_url( '/style.css', __FILE__ ));
 
     wp_enqueue_script(
         'thoanny-open-space',
         plugins_url( '/script.js', __FILE__ ),
         array( 'jquery' ),
-        '1.0.0',
+        $plugin_version,
         true
     );
 

@@ -25,7 +25,7 @@ function anthony_shortcode_discord_events() {
 
     $events = @file_get_contents("https://discord.com/api/v8/guilds/$guild/scheduled-events", false, $ctx);
 
-    if(!$events) {
+    if(!$events || !json_decode($events)) {
         $html = "<div class='discord-events error'><p>Aucun événement programmé pour le moment...</p></div>";
         set_transient($sid, $html, MINUTE_IN_SECONDS * 15);
         return $html;
