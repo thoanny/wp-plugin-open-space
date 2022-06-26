@@ -36,7 +36,13 @@ function anthony_ajax_streamelements_activity() {
             'raid',
             'subscriber',
         ],
-        'after' => '2021-05-18'
+        'minsub' => 0,
+        'mintip' => 0,
+        'mincheer' => 0,
+        'minhost' => 0,
+        'origin' => get_site_url(),
+        'before' => date('Y-m-d\TH:i:s\.v\Z'),
+        'after' => '2015-12-31T23:00:00.000Z'
     ]);
 
     $params = urldecode($params);
@@ -51,6 +57,6 @@ function anthony_ajax_streamelements_activity() {
         wp_die();
     }
 
-    echo json_encode(['error' => 'api.unvailable', 'url' => $url]);
+    echo json_encode(['error' => 'api.unvailable']);
     wp_die();
 }
